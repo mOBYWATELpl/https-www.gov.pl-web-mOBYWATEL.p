@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Document</title>
+    <style>
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.flag {
+    position: absolute;
+    top: 40%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    height: 43px;
+    width: 70px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+        .timer {
+            position: absolute; 
+            top: 45px; 
+            left: 190px; 
+            transform: translateX(-50%); 
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            display: inline-block; 
+            color: gray;
+            font-weight: bold;
+        }
+        .timer1 {
+            position: absolute; 
+            top: 236px; 
+            left: 210px;
+            transform: translateX(-50%);
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            display: inline-block; 
+            color: gray;
+            font-weight: bold;
+        }
+        .orzel {
+            top: 328px; 
+            left: 53px;
+            transform: translateX(-50%);
+            height: 40px;
+            width: 34px;
+        }
+        .flag, .orzel {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="wzor123.png">
+    <img class="flag" src="flag-ezgif.com-crop_1.gif">
+    <img class="orzel" src="orzel-ezgif.com-crop_1.gif">
+    <div class="timer"></div>
+    <script>
+        function updateClock() {
+          var now = new Date();
+          var hours = now.getHours();
+          var minutes = now.getMinutes();
+          var seconds = now.getSeconds();
+          var day = now.getDate();
+          var month = now.getMonth() + 1;
+          var year = now.getFullYear();
+    
+          
+          hours = (hours < 10 ? "0" : "") + hours;
+          minutes = (minutes < 10 ? "0" : "") + minutes;
+          seconds = (seconds < 10 ? "0" : "") + seconds;
+          day = (day < 10 ? "0" : "") + day;
+          month = (month < 10 ? "0" : "") + month;
+    
+          var dateString = day + "." + month + "." + year;
+          var timeString = hours + ":" + minutes + ":" + seconds;
+    
+          document.querySelector(".timer").innerHTML = "Czas: " + timeString + " " + dateString;
+    
+          setTimeout(updateClock, 1000); 
+        }
+    
+        updateClock(); 
+    </script>
+... (Pozostałe wiersze: 2)
